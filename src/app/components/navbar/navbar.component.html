@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-md d-flex align-items-center m-0 bg-white">
+  <div class="container-fluid py-1 px-4">
+    <a class="navbar-brand" routerLink="/Pinterest"
+      ><i class="fa-brands fa-pinterest text-danger fa-2x"></i
+    ></a>
+    <button
+      class="navbar-toggler border-0 shadow-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item me-2">
+          <a
+            class="nav-link fw-medium px-3 text-dark"
+            aria-current="page"
+            routerLink="/Pinterest"
+            routerLinkActive="active-link"
+            style="font-size: 1.1rem"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link fw-medium px-3 text-dark"
+            aria-current="page"
+            routerLink="/Create"
+            routerLinkActive="active-link"
+            style="font-size: 1.1rem"
+            >Create</a
+          >
+        </li>
+      </ul>
+      <div
+        class="bowl-search d-flex flex-grow-1 rounded-5 py-1"
+        style="background-color: #eee"
+      >
+        <div class="icon-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <input
+          #searchInput
+          class="w-100 h-100 shadow-none border-0 bg-transparent form-control fw-semibold searchInput"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          [(ngModel)]="query"
+          name="inputName"
+          (ngModelChange)="onSubmit()"
+        />
+      </div>
+
+      <div class="options-user d-flex mx-1" role="button">
+        <div class="natification nav-icon">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="comments nav-icon">
+          <i class="fa-solid fa-comment-dots"></i>
+        </div>
+        <div class="avatar nav-icon">
+          <img
+            src="./assets/81450fdd-e058-4231-7089-7a8b65827900.jpeg"
+            alt="profile photo"
+            class="rounded-5 w-100"
+          />
+        </div>
+        <div class="show-more nav-icon">
+          <i class="fa-solid fa-caret-down"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<span *ngIf="isLoading" class="loading">
+  <span class="loader"></span>
+</span>

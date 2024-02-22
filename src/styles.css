@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+}

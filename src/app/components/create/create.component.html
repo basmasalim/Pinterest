@@ -1,0 +1,67 @@
+<main>
+  <section class="container">
+    <div
+      class="box d-flex justify-content-center align-items-center position-relative"
+    >
+      <button
+        class="btn btn-danger delete position-absolute"
+        (click)="delete()"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="sliderBox w-75">
+        <div class="previewBox">
+          <img
+            onerror="this.src='./assets/placeholder-image.png'"
+            [src]="preview"
+            id="preview"
+            alt=""
+            class="w-100 border border-black border-opacity-50"
+          />
+        </div>
+      </div>
+      <div class="chevron d-flex position-absolute rounded-2">
+        <button
+          class="btn left bg-black text-white px-3 py-1"
+          (click)="minsImages()"
+          [disabled]="!preview || imgIndex == 0"
+        >
+          <i class="fa-solid fa-chevron-left fa-lg"></i>
+        </button>
+        <button
+          class="btn right bg-black text-white px-3 py--1"
+          (click)="plusImages()"
+          [disabled]="!preview || imgIndex == images.length - 1"
+        >
+          <i class="fa-solid fa-chevron-right fa-lg"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="slider d-flex justify-content-center align-items-center mt-3">
+      <div
+        class="uploudBtn d-flex justify-content-center align-items-center w-50"
+        style="height: 100px"
+      >
+        <label *ngIf="images.length < 5" for="upload" class="btn btn-dark me-3">
+          <i class="fa-solid fa-plus"></i>
+        </label>
+        <img
+          *ngFor="let image of images; let index = index"
+          src="{{ image }}"
+          alt="your image"
+          class="w-100 mx-1 border border-opacity-50 border-black p-1"
+          style="height: 100px; cursor: pointer"
+          (click)="display(index)"
+        />
+        <input
+          id="upload"
+          type="file"
+          hidden
+          multiple
+          (change)="getImages($event)"
+        />
+      </div>
+    </div>
+  </section>
+</main>

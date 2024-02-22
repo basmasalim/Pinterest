@@ -1,0 +1,43 @@
+<main class="overflow-hidden">
+  <section class="container-fluid mt-4">
+    <div
+      class="gridContainer"
+      data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 200 }'
+    >
+      <lightgallery
+        [settings]="settings"
+        *ngFor="let item of imageData"
+        class="grid-item"
+      >
+        <a [href]="item.urls.regular">
+          <div class="position-relative rounded-3 overflow-hidden">
+            <img [src]="item.urls.regular" class="w-100" />
+          </div>
+          <!-- Overlay Layer -->
+          <div
+            class="layer position-absolute start-0 w-100 top-0 h-100 rounded-3"
+          >
+            <div
+              class="d-flex flex-column justify-content-around align-items-end h-100"
+            >
+              <button
+                class="btn btn-danger btn_save text-capitalize fw-bold rounded-5 d-flex justify-content-flex-end py-1 px-2 m-3"
+              >
+                save
+              </button>
+              <div
+                class="bottom_option_Card d-flex justify-content-space-between my-2 ms-2 w-100 h-100"
+                style="align-items: flex-end"
+              >
+                <i
+                  class="fa-solid fa-arrow-up-from-bracket bowl_icon text-dark fw-bold"
+                ></i>
+                <i class="fa-solid fa-ellipsis bowl_icon text-dark fw-bold"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </lightgallery>
+    </div>
+  </section>
+</main>
