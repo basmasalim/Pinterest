@@ -36,10 +36,5 @@ This project relies on the following dependencies:
 
 For more details on dependencies and their versions, please refer to the `package.json` file.
 
-## Live Demo
-
-Experience the Tabs Project in action! Click the link below to access the live demo:
-
-### [Live Demo](https://basmasalim.github.io/Pinterest-by-Angular-/)
 
 Feel free to interact with the project, browse through different jobs, and explore the user-friendly interface. The live demo provides a hands-on experience to see the Tabs Project in action.
